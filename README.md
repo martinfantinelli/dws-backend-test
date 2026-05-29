@@ -46,6 +46,33 @@ java -jar target/isobar-fm-0.0.1-SNAPSHOT.jar
 
 The service starts on **http://localhost:8080**.
 
+## Run with Docker
+
+If you'd rather not install JDK/Maven, you can build and run everything in a container.
+You only need Docker (Docker Desktop, OrbStack, or any Docker engine) running.
+
+```bash
+# build the image (compiles + packages inside the container)
+docker build -t isobar-fm .
+
+# run it, mapping the container's port 8080 to your machine
+docker run --rm -p 8080:8080 isobar-fm
+```
+
+The service is then reachable at **http://localhost:8080** exactly as above — open
+http://localhost:8080/swagger-ui.html or use the curl examples below.
+
+Stop it with `Ctrl+C` (the `--rm` flag removes the container on exit).
+
+Override configuration at runtime, e.g. a shorter cache TTL:
+
+```bash
+docker run --rm -p 8080:8080 isobar-fm --cache.ttl-minutes=1
+```
+
+> Note: `-p 8080:8080` publishes the API to *your own machine* (`localhost`). The container
+> is not exposed to the public internet.
+
 ## Explore the API with Swagger
 
 Once the app is running, open the interactive docs in a browser:

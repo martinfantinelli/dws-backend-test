@@ -1,0 +1,22 @@
+# Maven build output
+target/
+
+# Excluded from this repo per request
+ARCHITECTURE.md
+
+# IDE / editor
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Local tooling
+.claude/
+
+# OS
+.DS_Store
+
+# Logs
+*.log

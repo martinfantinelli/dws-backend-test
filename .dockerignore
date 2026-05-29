@@ -1,0 +1,11 @@
+target/
+.git/
+.github/
+.idea/
+.vscode/
+.claude/
+*.iml
+*.log
+.DS_Store
+ARCHITECTURE.md
+README.md
